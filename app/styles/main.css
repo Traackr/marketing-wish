@@ -1,0 +1,98 @@
+/* Space out content a bit */
+body {
+  width: 850px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  font-family: helvetica;
+}
+
+.header,
+.wish,
+.submit,
+.footer {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.wish h1 {
+  font-size: 38px;
+  font-weight: bold;
+  color: grey;
+  line-height: 15px;
+}
+.wish h2 {
+  font-size: 20px;
+  color: grey;
+}
+.wish h1.highlight {
+  color: rgb(247,73,2);
+  line-height: 40px;
+}
+
+.next_wish {
+  margin-left: 30px;
+}
+.next_wish:hover {
+  cursor: pointer;
+}
+
+.submit {
+  color: grey;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+#glasses_img {
+  float: right;
+  margin-right: 5px;
+  margin-top: -25px;
+}
+
+input[type="text"], input[type="email"] {
+  width: 225px;
+  margin-right: 20px;
+  height: 25px;
+  font-size: 16px;
+  color: grey;
+}
+
+input[type="submit"] {
+  background-color: rgb(247,73,2);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-image: -moz-linear-gradient(top, #FF7932, #F74902);
+  background-image: -webkit-linear-gradient(top, #FF7932, #F74902);
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  font-size: 22px;
+  padding: 10px 20px 10px 20px;
+  margin-top: 20px;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.email {
+  padding-top: 12px;
+}
+.email h2 {
+  font-size: 20px;
+}
+
+.thx {
+  padding-top: 35px;
+  font-size: 22px;
+}
+.thx h2 {
+  font-size: 50px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  font-size: 15px;
+  font-style: italic;
+  color: #777;
+}

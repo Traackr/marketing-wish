@@ -1,7 +1,7 @@
 
 <div class="header">
   <a href="http://traackr.com" target="_blank">
-    <img src="images/traackr_logo.png"/>
+    <img border="0" src="images/traackr_logo.png"/>
   </a>
 </div>
 
@@ -11,12 +11,19 @@
       <table><tr>
 
         <td>
-          <h1>In 2014, I wish Marketing</h1>
-          <h1>focuses more on</h1>
-          <h1 class="highlight">{{wish.moreFocus}}</h1>
-          <h1>and less on</h1>
-          <h1 class="highlight">{{wish.lessFocus}}</h1>
-          <h2>by {{wish.name}}<span ng-show="wish.title">,</span> {{wish.title}}</h2>
+          <h1>
+            In 2015, I wish Marketing<br/>
+            would focus more on<br/>
+            <span class="highlight">{{wish.moreFocus}}</span><br/>
+            <!--
+            and less on<br/>
+            <span class="highlight">{{wish.lessFocus}}</span><br/>
+            -->
+          </h1>
+          <h2>
+             by {{wish.name}}
+             <span ng-show="wish.twitter">(<span ng-hide="wish.twitter.indexOf('@')==0">@</span>{{wish.twitter}})</span>
+             <span ng-show="wish.title">,</span> {{wish.title}}</h2>
         </td>
 
         <td>
@@ -30,51 +37,55 @@
 
   <img src="images/glasses.png" id="glasses_img"/>
 
-  <div class="submit">
+  <div class="submit" ng-hide="submitEmail">
     Happy Holidays from Traackr!<br>
     Share with us your wish for the future of marketing.
-    <table ng-hide="submitEmail">
-      <form>
+    <table>
         <tr>
-          <td>
+          <td colspan="3">
             More focus on<br/>
-            <input type="text" size="40" ng-model="submitWish.moreFocus"/>
+            <input type="text" class="long" ng-model="submitWish.moreFocus"/>
           </td>
+          <!--
           <td>
             Less focus on<br/>
             <input type="text" size="40" ng-model="submitWish.lessFocus"/>
           </td>
+        -->
         </tr>
         <tr>
           <td>
-            Name<br/>
-            <input type="text" size="40" ng-model="submitWish.name"/>
+            Name (*)<br/>
+            <input type="text" ng-model="submitWish.name"/>
           </td>
           <td>
-            Company (optional)<br/>
+            Twitter<br/>
+            <input type="text" ng-model="submitWish.twitter"/>
+          </td>
+          <td>
+            Company<br/>
             <input type="text" size="40" ng-model="submitWish.title"/>
           </td>
         </tr>
         <tr>
-          <td colspan="2">
+          <td colspan="3">
             <input type="submit" ng-click="addWish()"/>
           </td>
         </tr>
-      </form>
     </table>
-
-    <div class="email" ng-show="submitEmail && !thankyou">
-      <h2>Sign up to receive the Marketing 2014 infographic.</h2>
-      Your email: <input type="email" ng-model="email"/><br/>
-      <input type="submit" ng-click="addEmail()"/>
-    </div>
-
-    <div class="thx" ng-show="submitEmail && thankyou">
-      <h2>Thank you!</h2>
-      You will receive the Marketing 2014 infographic as soon as this poll is complete.
-    </div>
-
   </div>
+
+  <div class="submit email" ng-show="submitEmail && !thankyou">
+    <h2>Sign up to receive our Marketing 2015 infographic.</h2>
+    Your email: <input type="email" ng-model="email"/><br/>
+    <input type="submit" ng-click="addEmail()"/>
+  </div>
+
+  <div class="submit thx" ng-show="submitEmail && thankyou">
+    <h2>Thank you!</h2>
+    You will receive the Marketing 2015 infographic as soon as this poll is complete.
+  </div>
+
 
 
 

@@ -18,16 +18,17 @@ body {
   font-size: 38px;
   font-weight: bold;
   color: grey;
-  line-height: 15px;
+  line-height: 45px;
+  margin-top: 5px;
+}
+.wish .highlight {
+  color: rgb(247,73,2);
 }
 .wish h2 {
   font-size: 20px;
   color: grey;
 }
-.wish h1.highlight {
-  color: rgb(247,73,2);
-  line-height: 40px;
-}
+
 
 .next_wish {
   margin-left: 30px;
@@ -49,11 +50,15 @@ body {
 }
 
 input[type="text"], input[type="email"] {
-  width: 225px;
+  /*width: 225px;*/
+  width: 140px;
   margin-right: 20px;
   height: 25px;
   font-size: 16px;
   color: grey;
+}
+input[type="text"].long {
+  width: 480px;
 }
 
 input[type="submit"] {

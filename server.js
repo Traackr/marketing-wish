@@ -16,9 +16,6 @@ fs.readdirSync(modelsPath).forEach(function (file) {
   require(modelsPath + '/' + file);
 });
 
-// Populate empty DB with dummy data
-require('./lib/db/dummydata');
-
 // Controllers
 var api = require('./lib/controllers/api');
 
@@ -31,6 +28,8 @@ app.configure(function(){
 });
 
 app.configure('development', function(){
+  // Populate empty DB with dummy data
+  require('./lib/db/dummydata');
   app.use(express.static(path.join(__dirname, '.tmp')));
   app.use(express.static(path.join(__dirname, 'app')));
   app.use(express.errorHandler());

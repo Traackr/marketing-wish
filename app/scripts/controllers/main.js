@@ -6,8 +6,8 @@ angular.module('mrkgWishesApp')
     $scope.randomWish = function() {
       $http.get('/api/randomWish').success(function(wish) {
          $scope.wish = wish;
-         $location.url('?w='+wish._id);
          $scope.showPage = true;
+         $location.search({w: wish._id});
       });
     }; // End function randomWish
 
@@ -19,14 +19,13 @@ angular.module('mrkgWishesApp')
     }; // End function loadWish()
 
     $scope.addWish = function() {
-      if ( $scope.submitWish && $scope.submitWish.moreFocus && $scope.submitWish.lessFocus && $scope.submitWish.name ) {
+      if ( $scope.submitWish && $scope.submitWish.moreFocus && $scope.submitWish.name ) {
         $http.post('/api/addWish', $scope.submitWish).success(function(data) {
           $scope.wish = data;
           $scope.submitEmail = true;
-          $location.url('?w='+data._id);
-        });
+          $location.search({ w: data._id});
+       });
       }
-
     }; // End function addWish()
 
     $scope.addEmail = function() {
